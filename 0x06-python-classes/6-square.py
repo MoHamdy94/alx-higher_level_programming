@@ -5,7 +5,7 @@ This module contains a class that defines a square.
 
 Usage Example:
 
-    Square = __import__('5-square').Square
+    Square = __import__('6-square').Square
 
     my_square = Square(3)
     print(type(my_square))
@@ -17,25 +17,23 @@ class Square:
     """Defines the blueprint of a square.
 
     Attribute:
-        size: An integer indicating the size of the square object.
+        size (int): An integer representing the object size.
+        position (int, int): The position of the new square.
     """
 
-    def __init__(self, size=0):
-        """An object constructor method.
-
-        Initiatilizes Square with size.
-
-        Arg:
-            size: A integer representing object size.
-                  Has a default value of 0.
-        """
+    def __init__(self, size=0, position=(0, 0)):
+        """An object constructor method."""
         self.__size = size
         self.__position = position
 
     @property
     def size(self):
-        """Square setter and getter for __size."""
-        return (self.__size)
+        """Gets the size private attribute value.
+
+        Returns:
+            The size private attribute
+        """
+        return self.__size
 
     @size.setter
     def size(self, value):
@@ -44,11 +42,7 @@ class Square:
         Validates the assignment of the size private attribute.
 
         Arg:
-        value: the value to be set.
-
-        Raises:
-            TypeError: if size is not an integer.
-            ValueError: If size < 0.
+            value: the value to be set
         """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
@@ -89,7 +83,7 @@ class Square:
         Returns:
             The current square area
         """
-        return self.__size ** 2
+        return self.__size**2
 
     def my_print(self):
         """Displays the square object with # character"""
