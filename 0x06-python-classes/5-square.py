@@ -56,7 +56,7 @@ class Square:
         Returns:
             The current square area
         """
-        return self.__size**2
+        return self.__size ** 2
 
     def my_print(self):
         """Print stdout the square with the character"""
