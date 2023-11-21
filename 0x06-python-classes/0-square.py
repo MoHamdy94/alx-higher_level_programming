@@ -13,4 +13,5 @@ Usage Example:
     print(my_square.__dict__)
 """
 class Square:
+    """Defines the blueprint of a square"""
     pass
