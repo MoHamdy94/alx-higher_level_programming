@@ -31,6 +31,11 @@ class Square:
         """
         self.__size = size
 
+    @property
+    def size(self):
+        """Square setter and getter for __size."""
+        return (self.__size)
+
     @size.setter
     def size(self, value):
         """Sets the size private attribute value.
