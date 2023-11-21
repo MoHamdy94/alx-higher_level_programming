@@ -14,6 +14,12 @@ Usage Example:
 
 
 class Square:
+    """Defines the blueprint of a square.
+
+    Attribute:
+        size: An integer indicating the size of the square object.
+    """
+
     def __init__(self, size=0):
         """An object constructor method.
 
