@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import doctest
+"""Module for text_indentation method."""
 
 
 def text_indentation(text):
@@ -22,4 +22,5 @@ def text_indentation(text):
 
 
 if __name__ == "__main__":
+    import doctest
     doctest.testfile("tests/5-text_indentation.txt")
