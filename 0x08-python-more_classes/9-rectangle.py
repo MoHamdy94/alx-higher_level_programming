@@ -94,7 +94,6 @@ class Rectangle:
             The instance with the biggest area,
             or rect_1 if both rectangles have the same area
         """
-
         if not isinstance(rect_1, Rectangle):
             raise TypeError('rect_1 must be an instance of Rectangle')
         if not isinstance(rect_2, Rectangle):
@@ -109,3 +108,15 @@ class Rectangle:
             return rect_2
         else:
             return rect_1
+
+    @classmethod
+    def square(cls, size=0):
+        """Creates a new Rectangle instance with width == height == size.
+
+        Args:
+            size: size to set the new rectangle to
+
+        Returns:
+            The new Rectangle instance
+        """
+        return cls(size, size)
