@@ -3,7 +3,10 @@
 nqueens backtracking program to print the coordinates of n queens
 on an nxn grid such that they are all in non-attacking positions
 """
+
+
 from sys import argv
+
 if __name__ == "__main__":
     a = []
     if len(argv) != 2:
@@ -16,6 +19,7 @@ if __name__ == "__main__":
     if n < 4:
         print("N must be at least 4")
         exit(1)
+
     # initialize the answer list
     for i in range(n):
         a.append([i, None])
@@ -53,5 +57,6 @@ if __name__ == "__main__":
                     print(a)
                 else:
                     nqueens(x + 1)  # moves on to next x value to continue
+
     # start the recursive process at x = 0
     nqueens(0)
