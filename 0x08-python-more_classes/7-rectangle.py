@@ -64,11 +64,14 @@ class Rectangle:
 
     def __str__(self):
         """returns printable string representation of the rectangle"""
-        string = ""
-        if self.__width != 0 and self.__height != 0:
-            string += "\n".join(Rectangle.print_symbol * self.__width
-                                for j in range(self.__height))
-        return string
+        if self.__height == 0 or self.__width == 0:
+            return ''
+        string = ''
+        for i in range(self.__height):
+            for j in range(self.__width):
+                string += str(self.print_symbol)
+            string += '\n'
+        return string[:-1]
 
     def __repr__(self):
         """returns string representation of object"""
