@@ -25,6 +25,12 @@ class Rectangle(BaseGeometry):
             BaseGeometry (_type_): _description_
     """
     def __init__(self, width, height):
+        """_summary_
+
+        Args:
+            width (_type_): _description_
+            height (_type_): _description_
+        """
         self.__width = width
         self.__height = height
         self.integer_validator("width", width)
