@@ -2,14 +2,16 @@
 """Module 0-lookup.
 Finding a list of available attributes and methods of an object.
 """
+
+
 def lookup(obj):
     """
-    Returns a list of all the attributes and methods of an object.
-
-    Args:
-        obj (any object): The object for which we want to retrieve the attributes and methods.
-
-    Returns:
-        attributes (list): A list of all the attributes and methods of the input object.
+    The function "lookup" returns
+    a list of all the attributes and methods of an object.
+    :param obj: The `obj` parameter
+    is an object that you want to inspect and retrieve its attributes
+    and methods
+    :return: The `lookup` function
+    returns a list of all the attributes and methods of the `obj` object.
     """
     return dir(obj)
