@@ -39,6 +39,6 @@ class BaseGeometry:
             ValueError: If the value parameter is less than or equal to 0.
         """
         if type(value) is not int:
-            return TypeError("{} must be an integer".format(name))
+            return TypeError("{:s} must be an integer".format(name))
         if value <= 0:
-            return ValueError("{} must be greater than 0".format(name))
+            return ValueError("{:s} must be greater than 0".format(name))
