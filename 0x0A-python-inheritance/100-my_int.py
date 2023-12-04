@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""module 100-my_int"""
 class MyInt(int):
     """
     MyInt class that inherits from int and inverts == and != operators.
