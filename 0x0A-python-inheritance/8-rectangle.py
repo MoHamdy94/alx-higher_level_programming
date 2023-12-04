@@ -19,6 +19,11 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
+    """rectangle
+
+        Args:
+            BaseGeometry (_type_): _description_
+    """
     def __init__(self, width, height):
         self.__width = width
         self.__height = height
