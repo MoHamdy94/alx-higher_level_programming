@@ -9,5 +9,4 @@ def write_file(filename="", text=""):
     If no arguments are provided, it will create an empty file.
     """
     with open(filename, "w+") as f:
-        write_file = f.write(text)
-        print(write_file, end="")
+        return f.write(text)
