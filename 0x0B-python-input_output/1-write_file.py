@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Module 1-write_file
 """
-    
+
     
 def write_file(filename="", text=""):
     """Write a file with the given filename
