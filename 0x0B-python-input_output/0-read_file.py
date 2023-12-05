@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""module 0-read_file"""
+
+
 def read_file(filename=""):
     """
     Read the contents of a file and print each line.
