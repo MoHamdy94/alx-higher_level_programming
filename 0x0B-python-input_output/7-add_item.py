@@ -1,22 +1,15 @@
 #!/usr/bin/python3
-""" module """
+"""module to load and save"""
 import sys
 
-save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
-load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+if __name__ == "__main__":
+    save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+    load_from_json_file =\
+        __import__('6-load_from_json_file').load_from_json_file
 
-# Get all arguments passed to the script
-arguments = sys.argv[1:]
-
-# Check if the file exists, load data if it does
-existing_data = []
-try:
-    existing_data = load_from_json_file("add_item.json")
-except FileNotFoundError:
-    pass
-
-# Combine existing data with new arguments
-combined_data = existing_data + arguments
-
-# Save the combined data to the file
-save_to_json_file("add_item.json", combined_data)
+    try:
+        items = load_from_json_file("add_item.json")
+    except ValueError:
+        items = []
+    items.extend(sys.argv[1:])
+    save_to_json_file(items, "add_item.json")
