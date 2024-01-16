@@ -1,6 +1,6 @@
 -- Create table 'second_table' in db 'hbtn_0c_0'
 -- Addprops  (id INT), (name VARCHAR(256)), (score INT)
-CREATE TABLE second_table (
+CREATE TABLE IF NOT EXISTS second_table (
     id int,
     name varchar(256),
     score int
