@@ -1,2 +1,3 @@
---lists all rows of the table first_table from the database hbtn_0c_0 in your MySQL server
+-- List all rows of 'first_table' from db 'hbtn_0c_0'
+-- db name will be passed as arg to mysql cmd
 SELECT * FROM first_table;
