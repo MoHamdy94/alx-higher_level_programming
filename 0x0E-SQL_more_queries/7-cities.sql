@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS cities (
 
     -- Store the name of the city
     name VARCHAR(255) NOT NULL,
+    PRIMARY KEY(id),
 
     -- Establish a foreign key constraint between 'state_id' and 'id' column of 'states' table
     FOREIGN KEY (state_id) REFERENCES states(id)
