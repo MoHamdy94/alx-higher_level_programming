@@ -1,5 +1,7 @@
 -- Create the table if it doesn't exist
-CREATE TABLE IF NOW EXISTS id_not_null (
-    id int NOT NULL DEFAULT 1,
-    name VARCHAR(256)
+CREATE TABLE IF NOT EXISTS id_not_null (
+  id INT NOT NULL DEFAULT 1,
+  name VARCHAR(256)
 );
+
+
