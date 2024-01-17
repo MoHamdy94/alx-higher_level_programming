@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS cities (
     state_id INT NOT NULL,
 
     -- Store the name of the city
-    name VARCHAR(255) NOT NULL,
+    name VARCHAR(256) NOT NULL,
     PRIMARY KEY(id),
 
     -- Establish a foreign key constraint between 'state_id' and 'id' column of 'states' table
