@@ -1,9 +1,6 @@
 #!/usr/bin/node
-const number = Number(process.argv);
-
-// Check if conversion is successful and a finite number
-if (Number.isFinite(number)) {
-  console.log(`My number: ${number}`);
-} else {
-  console.log('Not a number');
-}
+if (isNaN(process.argv[2]) || process.argv[2] === undefined) {
+    console.log('Not a number');
+  } else {
+    console.log('My number:', parseInt(process.argv[2]));
+  }
