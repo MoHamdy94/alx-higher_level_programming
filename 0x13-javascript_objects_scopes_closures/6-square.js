@@ -9,12 +9,11 @@ class Square extends SquareModel {
 
   charPrint (c) {
     if (c == null) {
-        c = "X"
+      c = 'X';
     }
     for (let i = 0; i < this.width; i++) {
-        console.log(c.repeat(this.width));
+      console.log(c.repeat(this.width));
     }
-    
   }
 }
 module.exports = Square;
