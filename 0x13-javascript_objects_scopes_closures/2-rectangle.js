@@ -8,4 +8,4 @@ class Rectangle {
     this.height = h;
   }
 }
-export default Rectangle;
+module.exports = Rectangle;
