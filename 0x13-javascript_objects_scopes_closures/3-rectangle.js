@@ -9,9 +9,9 @@ class Rectangle {
   }
 
   print () {
-    for (let row = 0; row < w; row++) {
+    for (let row = 0; row < this.height; row++) {
       let line = '';
-      for (let col = 0; col < w; col++) {
+      for (let col = 0; col < this.width; col++) {
         line += 'X';
       }
       console.log(line);
