@@ -4,12 +4,7 @@ import MySQLdb
 import sys
 
 
-def list_states_starting_with_n(mysql_username, mysql_password, database_name):
-    """Connects to the MySQL database,
-    lists states with names starting with 'N'
-    in ascending order of ID, and closes the connection.
-    """
-
+if __name__ = "___main__":
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
