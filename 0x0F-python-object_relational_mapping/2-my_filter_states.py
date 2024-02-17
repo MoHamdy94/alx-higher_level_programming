@@ -1,16 +1,29 @@
 #!/usr/bin/python3
-"""a script that lists all states start with N from the database"""
-
-import MySQLdb
+""" Filter States Module"""
 import sys
+import MySQLdb
+
+
+def filter_states():
+    """Filter States"""
+    host = "localhost"
+    port = 3306
+    user_name = sys.argv[1]
+    password = sys.argv[2]
+    database_name = sys.argv[3]
+    keyword = sys.argv[4]
+    conn = MySQLdb.connect(host=host, port=port, user=user_name,
+                           passwd=password, db=database_name, charset="utf8")
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM states WHERE BINARY name='{}' ORDER BY id ASC"
+                .format(keyword))
+
+    query_rows = cur.fetchall()
+    for row in query_rows:
+        print(row)
+    cur.close()
+    conn.close()
+
+
 if __name__ == "__main__":
-    db = MySQLdb.connect(
-        user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3], port=3306)
-    cursr = db.cursor()
-    stateName = sys.argv[4]
-    cursr.execute("SELECT * FROM states WHERE name = '{}' \
-        ORDER BY id ASC;".format(stateName))
-    states = cursr.fetchall()
-    for state in states:
-        print(state)
-    db.close()
+    filter_states()
