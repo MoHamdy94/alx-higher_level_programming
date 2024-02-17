@@ -16,10 +16,11 @@ def list_states(mysql_username, mysql_password, database_name):
 
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states")
     results = cursor.fetchall()
 
     for row in results:
-       print(row)
+        print(row)
 
+    cursor.close()
     db.close()
