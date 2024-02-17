@@ -10,7 +10,7 @@ if __name__ == "__main__":
     c = db.cursor()
     stateName = sys.argv[4]
     c.execute("""SELECT * FROM states WHERE name
-                = '{}' ORDER BY id ASC; """.format(c.escape(stateName)))
+                = '{}' ORDER BY id ASC; """.format(stateName))
     rows = c.fetchall()
     for row in rows:
         print(row)
