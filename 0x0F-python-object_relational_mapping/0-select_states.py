@@ -4,15 +4,9 @@ import MySQLdb
 import sys
 
 
-def list_states(mysql_username, mysql_password, database_name):
-
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=mysql_username,
-        passwd=mysql_password,
-        db=database_name
-    )
+if __name__ == "__main__":
+    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
+                         passwd=sys.argv[2], db=sys.argv[3], port=3306)
 
     cursor = db.cursor()
 
