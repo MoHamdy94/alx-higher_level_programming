@@ -1,15 +1,26 @@
 #!/usr/bin/python3
-"""a script that lists all states from the database"""
-
-import MySQLdb
+""" Select States Module"""
 import sys
+import MySQLdb
+
+
+def select_states():
+    """Select States"""
+    host = "localhost"
+    port = 3306
+    user_name = sys.argv[1]
+    password = sys.argv[2]
+    database_name = sys.argv[3]
+    conn = MySQLdb.connect(host=host, port=port, user=user_name,
+                           passwd=password, db=database_name, charset="utf8")
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    query_rows = cur.fetchall()
+    for row in query_rows:
+        print(row)
+    cur.close()
+    conn.close()
+
+
 if __name__ == "__main__":
-    db = MySQLdb.connect(
-        user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3], port=3306)
-    cursr = db.cursor()
-    cursr.execute(
-        "SELECT * FROM states;"
-    )
-    states = cursr.fetchall()
-    for state in states:
-        print(state)
+    select_states()
