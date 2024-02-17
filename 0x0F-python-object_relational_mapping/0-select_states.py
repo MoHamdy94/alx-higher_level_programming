@@ -13,3 +13,5 @@ if __name__ == "__main__":
     states = cursr.fetchall()
     for state in states:
         print(state)
+    cursr.close()
+    db.close()
