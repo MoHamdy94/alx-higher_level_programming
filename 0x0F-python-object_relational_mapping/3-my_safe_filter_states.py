@@ -1,27 +1,17 @@
 #!/usr/bin/python3
-import sys
+"""  Write query that matches arges but safe SQL injection """
 import MySQLdb
-
-
-def safe_filter_states():
-    """Safe Filter States"""
-    host = "localhost"
-    port = 3306
-    user_name = sys.argv[1]
-    password = sys.argv[2]
-    database_name = sys.argv[3]
-    name = sys.argv[4]
-    conn = MySQLdb.connect(host=host, port=port, user=user_name,
-                           passwd=password, db=database_name, charset="utf8")
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC",
-                (name,))
-    query_rows = cur.fetchall()
-    for row in query_rows:
-        print(row)
-    cur.close()
-    conn.close()
+import sys
 
 
 if __name__ == "__main__":
-    safe_filter_states()
+    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
+                         passwd=sys.argv[2], db=sys.argv[3], port=3306)
+    c = db.cursor()
+    match = sys.argv[4]
+    c.execute("SELECT * FROM states WHERE name LIKE %s", (match, ))
+    rows = c.fetchall()
+    for row in rows:
+        print(row)
+    c.close()
+    db.close()
